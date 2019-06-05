@@ -1,3 +1,4 @@
+import 'package:boss/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color.fromARGB(255, 0, 215, 198),
           accentColor: Colors.cyan[300]
       ),
+      home: Splash(),
     );
   }
 }

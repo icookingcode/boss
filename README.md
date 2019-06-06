@@ -9,3 +9,7 @@
   * 主页选项卡: 
     * TabController 使用
     * Image 小部件 展示图片
+    
+## 职位模块设计
+  * Job 模型
+  * Item 绘制

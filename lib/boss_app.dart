@@ -1,4 +1,5 @@
 import 'package:boss/view/jobs_view.dart';
+import 'package:boss/view/message_view.dart';
 import 'package:boss/widget/icon_tab.dart';
 import 'package:boss/widget/icon_tab2.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +45,7 @@ class _BossAppState extends State<BossApp> with SingleTickerProviderStateMixin {
         children: [
           JobTab(),
           Text('2'),
-          Text('3'),
+          MessageTab(),
           Text('4'),
         ],
         controller: _controller,

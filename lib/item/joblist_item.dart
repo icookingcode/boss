@@ -63,7 +63,7 @@ class JobListItem extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(left: 10, top: 5, right: 10),
+                          padding: EdgeInsets.only(left: 10, top: 5, right: 10,bottom: 10),
                           child: Text(
                             job.username + " | " + job.title,
                             style: TextStyle(

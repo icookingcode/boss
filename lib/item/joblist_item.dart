@@ -45,7 +45,8 @@ class JobListItem extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 5.0,left: 10.0,bottom: 5.0),
+                      margin:
+                          EdgeInsets.only(top: 5.0, left: 10.0, bottom: 5.0),
                       child: Text(
                         job.cname + ' ' + job.size,
                         textAlign: TextAlign.left,
@@ -54,6 +55,23 @@ class JobListItem extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
+                    ),
+                    Divider(
+                      height: 10,
+                      color: Colors.grey[400],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, top: 5, right: 10),
+                          child: Text(
+                            job.username + " | " + job.title,
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

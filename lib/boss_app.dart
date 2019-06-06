@@ -1,4 +1,4 @@
-import 'package:boss/view/job_view.dart';
+import 'package:boss/view/jobs_view.dart';
 import 'package:boss/widget/icon_tab.dart';
 import 'package:boss/widget/icon_tab2.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,7 @@ class _BossAppState extends State<BossApp> with SingleTickerProviderStateMixin {
     return Scaffold(
       body: TabBarView(
         children: [
-          JobView(),
+          JobTab(),
           Text('2'),
           Text('3'),
           Text('4'),
@@ -52,6 +52,8 @@ class _BossAppState extends State<BossApp> with SingleTickerProviderStateMixin {
       bottomNavigationBar: Material(
         color: Colors.white,
         child: TabBar(
+          indicatorSize: TabBarIndicatorSize.label,
+          labelStyle: TextStyle(fontSize: 13),
           controller: _controller,
 //          tabs: _getTabBarView2(),
           tabs: _getTabBarView(),

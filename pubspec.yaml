@@ -51,6 +51,7 @@ flutter:
     - assets/images/ic_main_tab_find_pre.png
     - assets/images/ic_main_tab_my_nor.png
     - assets/images/ic_main_tab_my_pre.png
+    - assets/images/f3_right_arrow_grey.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

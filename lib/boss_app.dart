@@ -1,3 +1,4 @@
+import 'package:boss/view/company/company_view.dart';
 import 'package:boss/view/jobs_view.dart';
 import 'package:boss/view/message_view.dart';
 import 'package:boss/widget/icon_tab.dart';
@@ -44,7 +45,7 @@ class _BossAppState extends State<BossApp> with SingleTickerProviderStateMixin {
       body: TabBarView(
         children: [
           JobTab(),
-          Text('2'),
+          CompanyTab(),
           MessageTab(),
           Text('4'),
         ],

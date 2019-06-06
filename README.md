@@ -17,3 +17,7 @@
 ## 消息模块设计
   * Message 模型
   * Item 绘制
+  
+## 公司模块设计
+  * Company 模型
+  * Item 绘制

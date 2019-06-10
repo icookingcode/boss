@@ -25,5 +25,5 @@
   * 热门职位界面 company_hot_job.dart
   * 公司介绍 company_inc.dart
   * 公司信息 company_info.dart
-  * 轮播图  indicator_viewpager.dart
+  * 轮播图  indicator_viewpager.dart  添加自动轮播功能
   

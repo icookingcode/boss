@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -15,9 +17,27 @@ class DotsIndicator extends AnimatedWidget {
   static const double _kDotSpacing = 2.0;
 
   Widget _buildDot(int index) {
-    double selectedness = Curves.easeOut.transform(max(0.0,
-        1.0 - ((controller.page%itemCount ?? controller.initialPage) - index).abs()));
-    double zoom = 1.0 + (_kMaxZoom - 1) * selectedness;
+    if (controller == null) {
+      return Container(
+        width: 0,
+        height: 0,
+      );
+    }
+    double zoom;
+    try {
+      double selectedness = Curves.easeOut.transform(max(
+          0.0,
+          1.0 -
+              ((controller.page % itemCount ?? controller.initialPage) - index)
+                  .abs()));
+      zoom = 1.0 + (_kMaxZoom - 1) * selectedness;
+    } catch (except) {
+      if (index == 0)
+        zoom = 2;
+      else
+        zoom = 1;
+    }
+
     return Container(
       margin: EdgeInsets.only(left: _kDotSpacing),
       child: Material(
@@ -58,10 +78,27 @@ class _IndicatorViewPagerState extends State<IndicatorViewPager> {
   final _controller = PageController();
   static const _kDuration = Duration(milliseconds: 500);
   static const _kCurve = Curves.ease;
-  final _kArrowColor = Colors.grey.withAlpha(155);
+  final _kArrowColor = Colors.grey;
+  final _kPeriod = Duration(seconds: 3);
+  Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+//    _timer = Timer.periodic(_kPeriod, (timer){
+//      _controller.nextPage(duration: _kDuration, curve: _kCurve);
+//    });
+  }
+
+  @override
+  void dispose() {
+    if (_timer != null) _timer.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('buildDot:itemcount${widget.pages.length}');
     return Scaffold(
       body: IconTheme(
           data: IconThemeData(
@@ -85,9 +122,10 @@ class _IndicatorViewPagerState extends State<IndicatorViewPager> {
                     controller: _controller,
                     color: _kArrowColor,
                     itemCount: widget.pages.length,
-                    onPageSelected:(page){
-                      _controller.animateToPage(page, duration: _kDuration, curve: _kCurve);
-                    } ,
+                    onPageSelected: (page) {
+                      _controller.animateToPage(page,
+                          duration: _kDuration, curve: _kCurve);
+                    },
                   ),
                 ),
               ),

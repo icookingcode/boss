@@ -41,8 +41,8 @@ class _CompanyDetailState extends State<CompanyDetail>
           color: Colors.black.withAlpha(200),
           child: ConstrainedBox(
             constraints: BoxConstraints.expand(),
-            child: Image.network(
-              url,
+            child: Image(
+              image: NetworkImage(url),
               fit: BoxFit.cover,
               height: _kAppBarHeight,
             ),
@@ -103,7 +103,9 @@ class _CompanyDetailState extends State<CompanyDetail>
               child: IndicatorViewPager(_imagePages),
             ),
             CompanyInfo(company: widget.company),
-            Divider(height: 2,),
+            Divider(
+              height: 2,
+            ),
             TabBar(
               tabs: _tabs,
               controller: _controller,

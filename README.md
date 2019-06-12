@@ -26,4 +26,6 @@
   * 公司介绍 company_inc.dart
   * 公司信息 company_info.dart
   * 轮播图  indicator_viewpager.dart  添加自动轮播功能
+### 我的模块设计
+  * 我的界面编写 mine_view.dart
   

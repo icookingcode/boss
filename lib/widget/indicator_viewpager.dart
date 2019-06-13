@@ -85,9 +85,9 @@ class _IndicatorViewPagerState extends State<IndicatorViewPager> {
   @override
   void initState() {
     super.initState();
-//    _timer = Timer.periodic(_kPeriod, (timer){
-//      _controller.nextPage(duration: _kDuration, curve: _kCurve);
-//    });
+    _timer = Timer.periodic(_kPeriod, (timer){
+      _controller.nextPage(duration: _kDuration, curve: _kCurve);
+    });
   }
 
   @override

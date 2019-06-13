@@ -90,10 +90,10 @@ class MineTab extends StatelessWidget {
                           },
                         ),
                         ContractItem(
-                          title: '已拒绝',
+                          title: '待面试',
                           count: '5',
                           onPressed: (){
-                            showDialog(context: context, builder:(context)=> AlertDialog(content: Text("已拒绝",style: TextStyle(fontSize: 20),),),);
+                            showDialog(context: context, builder:(context)=> AlertDialog(content: Text("待面试",style: TextStyle(fontSize: 20),),),);
                           },
                         ),
                       ],

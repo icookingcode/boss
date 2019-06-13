@@ -28,4 +28,5 @@
   * 轮播图  indicator_viewpager.dart  添加自动轮播功能
 ### 我的模块设计
   * 我的界面编写 mine_view.dart
+    * GestureDetector 添加手势，点击等
   
